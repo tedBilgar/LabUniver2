@@ -31,9 +31,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             case R.id.buttonDev:
-                //TODO Переключение
-                /*Intent intent = new Intent(MainActivity.this, EnterCustomer.class);
-                startActivity(intent);*/
+                Intent intent1 = new Intent(MainActivity.this, EnterDeveloper.class);
+                startActivity(intent1);
                 break;
         }
     }

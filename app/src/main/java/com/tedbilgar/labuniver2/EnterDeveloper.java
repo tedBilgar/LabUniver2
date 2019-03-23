@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class EnterCustomer extends AppCompatActivity implements View.OnClickListener{
+public class EnterDeveloper extends AppCompatActivity implements View.OnClickListener {
 
     Button loginButton, registerButton;
     EditText loginNameText, loginPasText, regNameText, regPasText;
@@ -22,23 +22,23 @@ public class EnterCustomer extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_enter_customer);
+        setContentView(R.layout.activity_enter_developer);
 
-        loginButton = (Button) findViewById(R.id.login);
+        loginButton = (Button) findViewById(R.id.loginDev);
         loginButton.setOnClickListener(this);
 
-        registerButton = (Button) findViewById(R.id.registration);
+        registerButton = (Button) findViewById(R.id.regDev);
         registerButton.setOnClickListener(this);
 
-        loginNameText = (EditText) findViewById(R.id.loginName);
-        loginPasText = (EditText) findViewById(R.id.loginPas);
+        loginNameText = (EditText) findViewById(R.id.loginDevName);
+        loginPasText = (EditText) findViewById(R.id.loginDevPas);
 
-        regNameText = (EditText) findViewById(R.id.regName);
-        regPasText = (EditText) findViewById(R.id.regPas);
+        regNameText = (EditText) findViewById(R.id.regDevName);
+        regPasText = (EditText) findViewById(R.id.regDevPas);
 
         dbHelper = new DBHelper(this);
 
-        textView = (TextView) findViewById(R.id.textView5);
+        textView = (TextView) findViewById(R.id.textView2);
     }
 
     @Override
@@ -50,48 +50,52 @@ public class EnterCustomer extends AppCompatActivity implements View.OnClickList
         switch (v.getId()){
 
 
-            case R.id.login:
+            case R.id.loginDev:
                 String nameLogin = loginNameText.getText().toString();
                 String pasLogin = loginPasText.getText().toString();
 
-                Cursor cursor = database.query(DBHelper.CUSTOMER_TABLE,null,null,null,null,null,null);
+                Cursor cursor = database.query(DBHelper.DEVELOPER_TABLE,null,null,null,null,null,null);
                 boolean isRight = false;
 
                 if(cursor.moveToFirst()){
-                    int idIndex = cursor.getColumnIndex(DBHelper.KEY_CUS_ID);
-                    int nameIndex = cursor.getColumnIndex(DBHelper.KEY_CUS_NAME);
-                    int pasIndex = cursor.getColumnIndex(DBHelper.KEY_CUS_PAS);
+                    int idIndex = cursor.getColumnIndex(DBHelper.KEY_DEV_ID);
+                    int nameIndex = cursor.getColumnIndex(DBHelper.KEY_DEV_NAME);
+                    int pasIndex = cursor.getColumnIndex(DBHelper.KEY_DEV_PAS);
                     do {
                         if (nameLogin.equals(cursor.getString(nameIndex)) && pasLogin.equals(cursor.getString(pasIndex))) {
                             isRight = true;
                             loginEnterName = nameLogin;
+                            textView.append("YEASSS");
                             break;
                         }
                     } while (cursor.moveToNext());
                 }else Log.d("mLog", "0 rows");
                 cursor.close();
 
-                if (isRight == true) {
-                    Intent intent = new Intent(EnterCustomer.this, Interview.class);
+                if (isRight == false) {
+                    textView.append("NOOOOO");
+                    //TODO
+                    /*Intent intent = new Intent(EnterDeveloper.this, Interview.class);
                     intent.putExtra("username", loginEnterName);
-                    startActivity(intent);
-                } else textView.append("NOOOO");
+                    startActivity(intent);*/
+                }
 
                 break;
 
 
-            case R.id.registration:
+            case R.id.regDev:
                 String nameReg = regNameText.getText().toString();
                 String pasReg = regPasText.getText().toString();
 
-                contentValues.put(DBHelper.KEY_CUS_NAME, nameReg);
-                contentValues.put(DBHelper.KEY_CUS_PAS,pasReg);
+                contentValues.put(DBHelper.KEY_DEV_NAME, nameReg);
+                contentValues.put(DBHelper.KEY_DEV_PAS,pasReg);
 
-                database.insert(DBHelper.CUSTOMER_TABLE, null, contentValues);
+                database.insert(DBHelper.DEVELOPER_TABLE, null, contentValues);
 
-                Intent intent1 = new Intent(EnterCustomer.this, Interview.class);
+                //TODO
+               /* Intent intent1 = new Intent(EnterCustomer.this, Interview.class);
                 intent1.putExtra("username", nameReg);
-                startActivity(intent1);
+                startActivity(intent1);*/
                 break;
         }
     }

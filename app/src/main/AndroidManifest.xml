@@ -18,6 +18,10 @@
         </activity>
         <activity android:name=".EnterCustomer">
         </activity>
+        <activity android:name=".Interview">
+        </activity>
+        <activity android:name=".EnterDeveloper">
+        </activity>
     </application>
 
 </manifest>
