@@ -8,6 +8,10 @@
         android:background="@color/colorPrimaryDark"
         tools:context=".Interview">
 
+    <Button
+            android:text="Все мои задания"
+            android:layout_width="47dp"
+            android:layout_height="192dp" android:id="@+id/button5" android:textSize="7sp"/>
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"

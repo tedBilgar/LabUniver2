@@ -24,6 +24,8 @@
         </activity>
         <activity android:name=".ListInterview">
         </activity>
+        <activity android:name=".MyTasks">
+        </activity>
     </application>
 
 </manifest>

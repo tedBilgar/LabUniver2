@@ -86,7 +86,7 @@
                 android:layout_height="wrap_content" android:id="@+id/textView14" android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"/>
         <TextView
-                android:text="Функционал: менеджмент времени и работы"
+                android:text="Функционал: системы занятий"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/textView15" android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"/>
@@ -100,7 +100,7 @@
                 android:layout_height="wrap_content" android:id="@+id/textView17" android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"/>
         <TextView
-                android:text="Нужен ли протоип: Да"
+                android:text="Нужен ли протоип: Нет"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/textView18" android:layout_marginLeft="30dp"/>
         <TextView

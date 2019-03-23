@@ -1,6 +1,7 @@
 package com.tedbilgar.labuniver2;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -16,7 +17,7 @@ public class Interview extends AppCompatActivity implements View.OnClickListener
     TextView textView, selection,textView2;
     Spinner spinner;
     DBHelper dbHelper;
-    Button buttonSend;
+    Button buttonSend, button5;
     List<String> developers = new ArrayList<>();
     EditText aimtext, audittext, functext, platftext, langtext, prototext, prestext;
 
@@ -55,7 +56,6 @@ public class Interview extends AppCompatActivity implements View.OnClickListener
 
                 // Получаем выбранный объект
                 String item = (String)parent.getItemAtPosition(position);
-                selection.setText(item);
             }
 
             @Override
@@ -72,6 +72,8 @@ public class Interview extends AppCompatActivity implements View.OnClickListener
 
         buttonSend = (Button) findViewById(R.id.sendtodev);
         buttonSend.setOnClickListener(this);
+        button5 = (Button) findViewById(R.id.button5);
+        button5.setOnClickListener(this);
         aimtext = (EditText) findViewById(R.id.aim);
         audittext = (EditText) findViewById(R.id.audit);
         functext = (EditText) findViewById(R.id.func);
@@ -100,6 +102,10 @@ public class Interview extends AppCompatActivity implements View.OnClickListener
                 contentValues.put(DBHelper.KEY_PRES_PROJ, prestext.getText().toString());
 
                 database.insert(DBHelper.CUSTOMER_DEVELOPER, null, contentValues);
+                break;
+            case R.id.button5:
+                Intent intent = new Intent(Interview.this, MyTasks.class);
+                startActivity(intent);
                 break;
         }
     }
