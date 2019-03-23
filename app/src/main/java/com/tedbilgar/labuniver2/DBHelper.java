@@ -5,7 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBHelper extends SQLiteOpenHelper {
-    public static final int DATABASE_VERSION = 4;
+    public static final int DATABASE_VERSION = 9;
     public static final String DATABASE_NAME = "InterviewApp";
 
     public static final String CUSTOMER_TABLE = "customer";
@@ -18,10 +18,8 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String KEY_DEV_NAME = "_name";
     public static final String KEY_DEV_PAS = "_password";
 
-    public static final String CUSTOMER_DEVELOPER = "customer_developer";
+    public static final String CUSTOMER_DEVELOPER = "customerdeveloper";
     public static final String KEY_DEV_CUS_ID = "_id";
-    public static final String KEY_CUS_REF_ID = "_cusid";
-    public static final String KEY_DEV_REF_ID = "_devid";
     public static final String KEY_AIM = "_aim";
     public static final String KEY_AUDIT = "_audit";
     public static final String KEY_FUNC = "_func";
@@ -29,6 +27,9 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String KEY_LANG = "_lang";
     public static final String KEY_PROT_REQ = "_protreq";
     public static final String KEY_PRES_PROJ = "_presproj";
+    public static final String LOGIN_DEV = "_logindev";
+    public static final String DEV_SIGN = "_devsign";
+    public static final String COMMENT = "_comment";
 
     public DBHelper( Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -52,9 +53,9 @@ public class DBHelper extends SQLiteOpenHelper {
                 + KEY_LANG + " text,"
                 + KEY_PROT_REQ + " text,"
                 + KEY_PRES_PROJ + " text,"
-                + " FOREIGN KEY ("+KEY_CUS_REF_ID+") REFERENCES "+CUSTOMER_TABLE+"("+KEY_CUS_ID+"),"
-                + " FOREIGN KEY ("+KEY_DEV_REF_ID+") REFERENCES "+DEVELOPER_TABLE+"("+KEY_DEV_ID+"));"
-        );
+                + LOGIN_DEV + " text,"
+                + DEV_SIGN + " integer,"
+                + COMMENT + " text" + ")");
     }
 
     @Override

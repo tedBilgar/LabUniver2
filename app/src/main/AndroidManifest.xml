@@ -22,6 +22,8 @@
         </activity>
         <activity android:name=".EnterDeveloper">
         </activity>
+        <activity android:name=".ListInterview">
+        </activity>
     </application>
 
 </manifest>

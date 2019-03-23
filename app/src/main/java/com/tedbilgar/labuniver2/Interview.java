@@ -1,22 +1,24 @@
 package com.tedbilgar.labuniver2;
 
+import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Interview extends AppCompatActivity {
-    TextView textView;
+public class Interview extends AppCompatActivity implements View.OnClickListener {
+    TextView textView, selection;
     Spinner spinner;
     DBHelper dbHelper;
+    Button buttonSend;
     List<String> developers = new ArrayList<>();
+    EditText aimtext, audittext, functext, platftext, langtext, prototext, prestext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,7 @@ public class Interview extends AppCompatActivity {
 
         //делаем спиннер
         spinner = (Spinner) findViewById(R.id.spinner);
+        selection = (TextView) findViewById(R.id.selection);
         // Создаем адаптер ArrayAdapter с помощью массива строк и стандартной разметки элемета spinner
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, developers);
         // Определяем разметку для использования при выборе элемента
@@ -47,11 +50,52 @@ public class Interview extends AppCompatActivity {
         // Применяем адаптер к элементу spinner
         spinner.setAdapter(adapter);
 
+        AdapterView.OnItemSelectedListener itemSelectedListener = new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                // Получаем выбранный объект
+                String item = (String)parent.getItemAtPosition(position);
+                selection.setText(item);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        };
+        spinner.setOnItemSelectedListener(itemSelectedListener);
+
+
         Bundle arguments = getIntent().getExtras();
         textView = (TextView) findViewById(R.id.UserNameView);
         textView.append(arguments.get("username").toString());
+
+        buttonSend = (Button) findViewById(R.id.sendtodev);
+        aimtext = (EditText) findViewById(R.id.aim);
+        audittext = (EditText) findViewById(R.id.audit);
+        functext = (EditText) findViewById(R.id.func);
+        platftext = (EditText) findViewById(R.id.platf);
+        langtext = (EditText) findViewById(R.id.lang);
+        prototext = (EditText) findViewById(R.id.proto);
+        prestext = (EditText) findViewById(R.id.pres);
     }
 
 
+    @Override
+    public void onClick(View v) {
+        SQLiteDatabase database = dbHelper.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
 
+        contentValues.put(DBHelper.KEY_AIM, aimtext.getText().toString());
+        contentValues.put(DBHelper.KEY_AUDIT, audittext.getText().toString());
+        contentValues.put(DBHelper.KEY_FUNC, functext.getText().toString());
+        contentValues.put(DBHelper.KEY_PLATF, platftext.getText().toString());
+        contentValues.put(DBHelper.KEY_LANG, langtext.getText().toString());
+        contentValues.put(DBHelper.LOGIN_DEV, selection.getText().toString());
+        contentValues.put(DBHelper.KEY_PROT_REQ, prototext.getText().toString());
+        contentValues.put(DBHelper.KEY_PRES_PROJ, prestext.getText().toString());
+
+        database.insert(DBHelper.CUSTOMER_DEVELOPER, null, contentValues);
+    }
 }

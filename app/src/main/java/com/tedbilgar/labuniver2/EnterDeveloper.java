@@ -65,7 +65,9 @@ public class EnterDeveloper extends AppCompatActivity implements View.OnClickLis
                         if (nameLogin.equals(cursor.getString(nameIndex)) && pasLogin.equals(cursor.getString(pasIndex))) {
                             isRight = true;
                             loginEnterName = nameLogin;
-                            textView.append("YEASSS");
+                             Intent intent = new Intent(EnterDeveloper.this, ListInterview.class);
+                             intent.putExtra("username", loginEnterName);
+                             startActivity(intent);
                             break;
                         }
                     } while (cursor.moveToNext());
@@ -73,11 +75,7 @@ public class EnterDeveloper extends AppCompatActivity implements View.OnClickLis
                 cursor.close();
 
                 if (isRight == false) {
-                    textView.append("NOOOOO");
-                    //TODO
-                    /*Intent intent = new Intent(EnterDeveloper.this, Interview.class);
-                    intent.putExtra("username", loginEnterName);
-                    startActivity(intent);*/
+                    textView.append("NO");
                 }
 
                 break;
@@ -92,10 +90,9 @@ public class EnterDeveloper extends AppCompatActivity implements View.OnClickLis
 
                 database.insert(DBHelper.DEVELOPER_TABLE, null, contentValues);
 
-                //TODO
-               /* Intent intent1 = new Intent(EnterCustomer.this, Interview.class);
+                Intent intent1 = new Intent(EnterDeveloper.this, ListInterview.class);
                 intent1.putExtra("username", nameReg);
-                startActivity(intent1);*/
+                startActivity(intent1);
                 break;
         }
     }
