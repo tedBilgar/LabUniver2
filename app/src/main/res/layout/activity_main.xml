@@ -16,35 +16,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" app:srcCompat="@drawable/send" android:id="@+id/imageView4" android:paddingBottom="40sp"
                 android:paddingTop="70sp"/>
-        <EditText
+        <TextView
+                android:text="Вы являетесь ..."
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:hint="Быстрота"
-                android:layout_marginLeft="40sp"
-                android:layout_marginRight="40sp"
-                android:layout_marginTop="20sp"
-                android:background="@color/colorWhite"
-                android:padding="10sp"
-                android:textColor="@color/colorAccent"
-                android:id="@+id/text1"/>
-        <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:hint="Быстрота"
-                android:layout_marginLeft="40sp"
-                android:layout_marginRight="40sp"
-                android:layout_marginTop="20sp"
-                android:background="@color/colorWhite"
-                android:padding="10sp"
-                android:textColor="@color/colorAccent"
-                android:id="@+id/text2"/>
+                android:layout_height="wrap_content" android:id="@+id/textView" android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
+                android:textSize="24sp" android:textStyle="bold" app:fontFamily="serif"
+                android:textColor="@android:color/holo_red_light" android:gravity="center"/>
         <Button
-                android:text="Button"
+                android:text="Заказчиком"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/button"/>
+                android:layout_height="wrap_content" android:id="@+id/buttonCust" android:layout_marginLeft="100dp"
+                android:layout_marginRight="100dp" android:height="75dp"/>
+        <Button
+                android:text="Разработчиком"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/buttonDev" android:layout_marginLeft="100dp"
+                android:layout_marginRight="100dp" android:height="75dp"/>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
