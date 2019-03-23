@@ -28,7 +28,7 @@
                 android:background="@color/colorWhite"
                 android:padding="10sp"
                 android:textColor="@color/colorAccent"
-                android:id="@+id/editText6"/>
+                android:id="@+id/text1"/>
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
                 android:background="@color/colorWhite"
                 android:padding="10sp"
                 android:textColor="@color/colorAccent"
-                android:id="@+id/editText7"/>
+                android:id="@+id/text2"/>
         <Button
                 android:text="Button"
                 android:layout_width="match_parent"
