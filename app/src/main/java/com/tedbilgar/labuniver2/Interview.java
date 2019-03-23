@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Interview extends AppCompatActivity implements View.OnClickListener {
-    TextView textView, selection;
+    TextView textView, selection,textView2;
     Spinner spinner;
     DBHelper dbHelper;
     Button buttonSend;
@@ -42,7 +42,6 @@ public class Interview extends AppCompatActivity implements View.OnClickListener
 
         //делаем спиннер
         spinner = (Spinner) findViewById(R.id.spinner);
-        selection = (TextView) findViewById(R.id.selection);
         // Создаем адаптер ArrayAdapter с помощью массива строк и стандартной разметки элемета spinner
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, developers);
         // Определяем разметку для использования при выборе элемента
@@ -72,6 +71,7 @@ public class Interview extends AppCompatActivity implements View.OnClickListener
         textView.append(arguments.get("username").toString());
 
         buttonSend = (Button) findViewById(R.id.sendtodev);
+        buttonSend.setOnClickListener(this);
         aimtext = (EditText) findViewById(R.id.aim);
         audittext = (EditText) findViewById(R.id.audit);
         functext = (EditText) findViewById(R.id.func);
@@ -84,18 +84,23 @@ public class Interview extends AppCompatActivity implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-        SQLiteDatabase database = dbHelper.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
 
-        contentValues.put(DBHelper.KEY_AIM, aimtext.getText().toString());
-        contentValues.put(DBHelper.KEY_AUDIT, audittext.getText().toString());
-        contentValues.put(DBHelper.KEY_FUNC, functext.getText().toString());
-        contentValues.put(DBHelper.KEY_PLATF, platftext.getText().toString());
-        contentValues.put(DBHelper.KEY_LANG, langtext.getText().toString());
-        contentValues.put(DBHelper.LOGIN_DEV, selection.getText().toString());
-        contentValues.put(DBHelper.KEY_PROT_REQ, prototext.getText().toString());
-        contentValues.put(DBHelper.KEY_PRES_PROJ, prestext.getText().toString());
+        switch (v.getId()){
+            case R.id.sendtodev:
+                SQLiteDatabase database = dbHelper.getWritableDatabase();
+                ContentValues contentValues = new ContentValues();
 
-        database.insert(DBHelper.CUSTOMER_DEVELOPER, null, contentValues);
+                contentValues.put(DBHelper.KEY_AIM, aimtext.getText().toString());
+                contentValues.put(DBHelper.KEY_AUDIT, audittext.getText().toString());
+                contentValues.put(DBHelper.KEY_FUNC, functext.getText().toString());
+                contentValues.put(DBHelper.KEY_PLATF, platftext.getText().toString());
+                contentValues.put(DBHelper.KEY_LANG, langtext.getText().toString());
+                contentValues.put(DBHelper.LOGIN_DEV, selection.getText().toString());
+                contentValues.put(DBHelper.KEY_PROT_REQ, prototext.getText().toString());
+                contentValues.put(DBHelper.KEY_PRES_PROJ, prestext.getText().toString());
+
+                database.insert(DBHelper.CUSTOMER_DEVELOPER, null, contentValues);
+                break;
+        }
     }
 }

@@ -5,69 +5,82 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark"
         tools:context=".Interview">
 
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-        <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:id="@+id/UserNameView"/>
         <TextView
+                android:text="Привет, "
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/selection"/>
+                android:layout_height="wrap_content" android:id="@+id/UserNameView" android:layout_marginLeft="40dp"
+                android:gravity="center" android:layout_marginRight="40dp"
+                android:textColor="@android:color/holo_red_light" android:textSize="20sp"/>
+        <TextView
+                android:text="Выберите исполнителя"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView9" android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp" android:textSize="16sp"
+                android:textColor="@android:color/holo_orange_dark"/>
         <Spinner
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/spinner"/>
+                android:layout_height="wrap_content" android:id="@+id/spinner" android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"/>
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:ems="10"
-                android:id="@+id/aim"/>
+                android:id="@+id/aim" android:layout_marginLeft="50dp" android:layout_marginRight="50dp"
+                android:hint="Предназначение" android:layout_marginTop="10dp"/>
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:ems="10"
-                android:id="@+id/audit"/>
+                android:id="@+id/audit" android:layout_marginLeft="50dp" android:layout_marginRight="50dp"
+                android:hint="Основая аудитория" android:layout_marginTop="10dp"/>
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:ems="10"
-                android:id="@+id/func"/>
+                android:id="@+id/func" android:layout_marginLeft="50dp" android:layout_marginRight="50dp"
+                android:hint="Функциональность" android:layout_marginTop="10dp"/>
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:ems="10"
-                android:id="@+id/platf"/>
+                android:id="@+id/platf" android:layout_marginLeft="50dp" android:layout_marginRight="50dp"
+                android:hint="Платформы" android:layout_marginTop="10dp"/>
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:ems="10"
-                android:id="@+id/lang"/>
+                android:id="@+id/lang" android:layout_marginLeft="50dp" android:layout_marginRight="50dp"
+                android:hint="Используемые технологии" android:layout_marginTop="10dp"/>
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:ems="10"
-                android:id="@+id/proto"/>
+                android:id="@+id/proto" android:layout_marginLeft="50dp" android:layout_marginRight="50dp"
+                android:hint="Нужен ли прототип" android:layout_marginTop="10dp"/>
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:ems="10"
-                android:id="@+id/pres"/>
+                android:id="@+id/pres" android:layout_marginLeft="50dp" android:layout_marginRight="50dp"
+                android:hint="Нужная ли презентация проекта" android:layout_marginTop="10dp"/>
         <Button
                 android:text="Отправить"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/sendtodev"/>
+                android:layout_height="wrap_content" android:id="@+id/sendtodev" android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"/>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
