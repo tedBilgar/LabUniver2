@@ -109,7 +109,7 @@ public class Interview extends AppCompatActivity implements View.OnClickListener
                 contentValues.put(DBHelper.KEY_PRES_PROJ, prestext.getText().toString());
 
                 database.insert(DBHelper.CUSTOMER_DEVELOPER, null, contentValues);
-                textView.append("YESS");
+                //textView.append("YESS");
                 break;
             case R.id.viewAll:
                 Intent intent = new Intent(Interview.this, MyTasks.class);

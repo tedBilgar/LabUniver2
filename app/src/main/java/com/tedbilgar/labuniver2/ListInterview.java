@@ -121,16 +121,25 @@ public class ListInterview extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
 
         SQLiteDatabase database = dbHelper.getWritableDatabase();
+        Cursor cursor = database.query(DBHelper.CUSTOMER_DEVELOPER,null,null,null,null,null,null);
 
         if ((v.getId()) < 100){
             EditText editText = (EditText) findViewById(v.getId()+200);
             String value = editText.getText().toString();
 
+            int IDIndex = cursor.getColumnIndex(DBHelper.KEY_DEV_CUS_ID);
             ContentValues contentValues = new ContentValues();
             contentValues.put(DBHelper.COMMENT, value);
 
-            database.insert(DBHelper.CUSTOMER_DEVELOPER, null, contentValues);
+            database.update(DBHelper.CUSTOMER_DEVELOPER, contentValues, "_id= ?",new String[]{Integer.toString(v.getId())});
             username.append(value);
+        }
+        if ((v.getId()) > 100){
+
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(DBHelper.DEV_SIGN, 2);
+
+            database.update(DBHelper.CUSTOMER_DEVELOPER, contentValues, "_id= ?",new String[]{Integer.toString(v.getId()-100)});
         }
     }
 }

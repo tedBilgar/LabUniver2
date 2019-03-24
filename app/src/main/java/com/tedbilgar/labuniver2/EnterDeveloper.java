@@ -75,7 +75,7 @@ public class EnterDeveloper extends AppCompatActivity implements View.OnClickLis
                 cursor.close();
 
                 if (isRight == false) {
-                    textView.append("NO");
+                    textView.append(" (Ошибка входа)");
                 }
 
                 break;
