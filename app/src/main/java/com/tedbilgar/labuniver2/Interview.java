@@ -20,6 +20,8 @@ public class Interview extends AppCompatActivity implements View.OnClickListener
     Button buttonSend, button5;
     List<String> developers = new ArrayList<>();
     EditText aimtext, audittext, functext, platftext, langtext, prototext, prestext;
+    String developerName, customername;
+    Button viewMyTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +58,7 @@ public class Interview extends AppCompatActivity implements View.OnClickListener
 
                 // Получаем выбранный объект
                 String item = (String)parent.getItemAtPosition(position);
+                developerName = item;
             }
 
             @Override
@@ -68,12 +71,11 @@ public class Interview extends AppCompatActivity implements View.OnClickListener
 
         Bundle arguments = getIntent().getExtras();
         textView = (TextView) findViewById(R.id.UserNameView);
+        customername = arguments.get("username").toString();
         textView.append(arguments.get("username").toString());
 
         buttonSend = (Button) findViewById(R.id.sendtodev);
         buttonSend.setOnClickListener(this);
-        button5 = (Button) findViewById(R.id.button5);
-        button5.setOnClickListener(this);
         aimtext = (EditText) findViewById(R.id.aim);
         audittext = (EditText) findViewById(R.id.audit);
         functext = (EditText) findViewById(R.id.func);
@@ -81,6 +83,10 @@ public class Interview extends AppCompatActivity implements View.OnClickListener
         langtext = (EditText) findViewById(R.id.lang);
         prototext = (EditText) findViewById(R.id.proto);
         prestext = (EditText) findViewById(R.id.pres);
+
+
+        viewMyTask = (Button) findViewById(R.id.viewAll);
+        viewMyTask.setOnClickListener(this);
     }
 
 
@@ -97,14 +103,17 @@ public class Interview extends AppCompatActivity implements View.OnClickListener
                 contentValues.put(DBHelper.KEY_FUNC, functext.getText().toString());
                 contentValues.put(DBHelper.KEY_PLATF, platftext.getText().toString());
                 contentValues.put(DBHelper.KEY_LANG, langtext.getText().toString());
-                contentValues.put(DBHelper.LOGIN_DEV, selection.getText().toString());
+                contentValues.put(DBHelper.LOGIN_DEV, developerName);
+                contentValues.put(DBHelper.LOGIN_CUS, customername);
                 contentValues.put(DBHelper.KEY_PROT_REQ, prototext.getText().toString());
                 contentValues.put(DBHelper.KEY_PRES_PROJ, prestext.getText().toString());
 
                 database.insert(DBHelper.CUSTOMER_DEVELOPER, null, contentValues);
+                textView.append("YESS");
                 break;
-            case R.id.button5:
+            case R.id.viewAll:
                 Intent intent = new Intent(Interview.this, MyTasks.class);
+                intent.putExtra("username",customername);
                 startActivity(intent);
                 break;
         }

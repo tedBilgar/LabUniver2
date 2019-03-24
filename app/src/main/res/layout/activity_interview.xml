@@ -8,10 +8,6 @@
         android:background="@color/colorPrimaryDark"
         tools:context=".Interview">
 
-    <Button
-            android:text="Все мои задания"
-            android:layout_width="47dp"
-            android:layout_height="192dp" android:id="@+id/button5" android:textSize="7sp"/>
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -86,5 +82,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/sendtodev" android:layout_marginLeft="50dp"
                 android:layout_marginRight="50dp"/>
+        <Button
+                android:text="Статус моих заданий"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/viewAll"/>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

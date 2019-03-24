@@ -24,106 +24,10 @@
                 android:layout_height="wrap_content" android:id="@+id/textView4" android:layout_marginRight="50dp"
                 android:layout_marginLeft="50dp" android:gravity="center" android:textSize="18sp"
                 android:textColor="@android:color/holo_orange_dark"/>
-        <TextView
-                android:text="Предназначение: Для уборки дома"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/tasklists" android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"/>
-        <TextView
-                android:text="Аудитория: Взрослые"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/textView7" android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"/>
-        <TextView
-                android:text="Функционал: менеджмент времени и работы"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/textView8" android:layout_marginRight="30dp"
-                android:layout_marginLeft="30dp"/>
-        <TextView
-                android:text="Платформа: IOS, Android"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/textView10" android:layout_marginLeft="30dp"/>
-        <TextView
-                android:text="Технологии: Java, PHP"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/textView11" android:layout_marginRight="30dp"
-                android:layout_marginLeft="30dp"/>
-        <TextView
-                android:text="Нужен ли протоип: Да"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/textView12" android:layout_marginLeft="30dp"/>
-        <TextView
-                android:text="Нужна ли презентация: Да"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/textView13" android:layout_marginRight="30dp"
-                android:layout_marginLeft="30dp"/>
-        <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:id="@+id/editText" android:hint="Ваш комментарий" android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp"/>
-        <Button
-                android:text="Дать комментарий"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/button" android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp"/>
-        <Button
-                android:text="Подтвердить работу"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/button2" android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp"/>
 
         <TextView
-                android:text="Предназначение: Для фитнеса"
+                android:text="TextView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/tasklists2" android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"/>
-        <TextView
-                android:text="Аудитория: Все возраста"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/textView14" android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"/>
-        <TextView
-                android:text="Функционал: системы занятий"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/textView15" android:layout_marginRight="30dp"
-                android:layout_marginLeft="30dp"/>
-        <TextView
-                android:text="Платформа: IOS, Android"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/textView16" android:layout_marginLeft="30dp"/>
-        <TextView
-                android:text="Технологии: Java, PHP"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/textView17" android:layout_marginRight="30dp"
-                android:layout_marginLeft="30dp"/>
-        <TextView
-                android:text="Нужен ли протоип: Нет"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/textView18" android:layout_marginLeft="30dp"/>
-        <TextView
-                android:text="Нужна ли презентация: Да"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/textView19" android:layout_marginRight="30dp"
-                android:layout_marginLeft="30dp"/>
-        <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:id="@+id/editText2" android:hint="Ваш комментарий" android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp"/>
-        <Button
-                android:text="Дать комментарий"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/button3" android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp"/>
-        <Button
-                android:text="Подтвердить работу"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/button4" android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp"/>
+                android:layout_height="wrap_content" android:id="@+id/testView"/>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

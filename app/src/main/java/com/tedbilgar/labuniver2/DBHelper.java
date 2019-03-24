@@ -5,7 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBHelper extends SQLiteOpenHelper {
-    public static final int DATABASE_VERSION = 15;
+    public static final int DATABASE_VERSION = 18;
     public static final String DATABASE_NAME = "InterviewApp";
 
     public static final String CUSTOMER_TABLE = "customer";
@@ -28,6 +28,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String KEY_PROT_REQ = "_protreq";
     public static final String KEY_PRES_PROJ = "_presproj";
     public static final String LOGIN_DEV = "_logindev";
+    public static final String LOGIN_CUS = "_logincus";
     public static final String DEV_SIGN = "_devsign";
     public static final String COMMENT = "_comment";
 
@@ -54,6 +55,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 + KEY_PROT_REQ + " text,"
                 + KEY_PRES_PROJ + " text,"
                 + LOGIN_DEV + " text,"
+                + LOGIN_CUS + " text,"
                 + DEV_SIGN + " integer,"
                 + COMMENT + " text" + ")");
     }

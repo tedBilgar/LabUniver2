@@ -11,29 +11,6 @@
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        <TextView
-                android:text="Для уборки дома"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/textView20" android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp" android:layout_marginTop="20dp" android:textSize="25sp"
-                android:gravity="center"/>
-        <TextView
-                android:text="Не подтверджено"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/textView21"
-                android:textColor="@android:color/holo_red_dark" android:layout_marginLeft="50dp"
-                android:layout_marginRight="50dp" android:gravity="center" android:textSize="25sp"/>
-        <TextView
-                android:text="Для фитнеса"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/textView22" android:layout_marginLeft="50dp"
-                android:layout_marginRight="50dp" android:gravity="center" android:textSize="25sp"
-                android:layout_marginTop="25dp"/>
-        <TextView
-                android:text="Подтверджено"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/textView23"
-                android:textColor="@android:color/holo_orange_dark" android:gravity="center" android:textSize="25sp"/>
+            android:layout_height="match_parent" android:id="@+id/layoutTasks">
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
