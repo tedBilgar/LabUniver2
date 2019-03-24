@@ -16,7 +16,7 @@ public class ListInterview extends AppCompatActivity implements View.OnClickList
     DBHelper dbHelper;
     String usernameString;
     LinearLayout linearLayout;
-    TextView testView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +25,6 @@ public class ListInterview extends AppCompatActivity implements View.OnClickList
         linearLayout = findViewById(R.id.layout);
 
         username = (TextView) findViewById(R.id.devusername);
-        testView = (TextView) findViewById(R.id.testView);
 
         Bundle arguments = getIntent().getExtras();
         usernameString = arguments.get("username").toString();
@@ -110,7 +109,7 @@ public class ListInterview extends AppCompatActivity implements View.OnClickList
                     button2.setOnClickListener(this);
                     linearLayout.addView(button2);
 
-                    testView.append(cursor.getString(loginCusIndex));
+
                 }
             } while (cursor.moveToNext());
         }else Log.d("mLog", "0 rows");
@@ -132,7 +131,6 @@ public class ListInterview extends AppCompatActivity implements View.OnClickList
             contentValues.put(DBHelper.COMMENT, value);
 
             database.update(DBHelper.CUSTOMER_DEVELOPER, contentValues, "_id= ?",new String[]{Integer.toString(v.getId())});
-            username.append(value);
         }
         if ((v.getId()) > 100){
 

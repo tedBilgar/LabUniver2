@@ -75,7 +75,7 @@ public class EnterCustomer extends AppCompatActivity implements View.OnClickList
                     Intent intent = new Intent(EnterCustomer.this, Interview.class);
                     intent.putExtra("username", loginEnterName);
                     startActivity(intent);
-                } else textView.append("NOOOO");
+                } else textView.append(" (Ошибка входа)");
 
                 break;
 
